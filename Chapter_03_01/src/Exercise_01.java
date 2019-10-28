@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-/*Да се напише програма, която превръща число в диапазона [0 … 100] в текст.*/
+/*Р”Р° СЃРµ РЅР°РїРёС€Рµ РїСЂРѕРіСЂР°РјР°, РєРѕСЏС‚Рѕ РїСЂРµРІСЂСЉС‰Р° С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅР° [0 вЂ¦ 100] РІ С‚РµРєСЃС‚.*/
 public class Exercise_01 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
