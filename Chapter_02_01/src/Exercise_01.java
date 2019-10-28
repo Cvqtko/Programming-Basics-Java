@@ -1,13 +1,30 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Scanner;
 
-/*Първата задача от тази тема е следната: да се напише конзолна програма, 
-която въвежда цяло число a и пресмята лицето на квадрат със страна a.*/
+/*Р—Р°РґР°С‡Р°: ** РїСЂРµСЃРјСЏС‚Р°РЅРµ СЃ РґР°С‚Рё - 1000 РґРЅРё РЅР° Р—РµРјСЏС‚Р°
+РќР°РїРёС€РµС‚Рµ РїСЂРѕРіСЂР°РјР°, РєРѕСЏС‚Рѕ РІСЉРІРµР¶РґР° СЂРѕР¶РґРµРЅР° РґР°С‚Р° РІСЉРІ С„РѕСЂРјР°С‚ dd-MM-yyyy Рё РїСЂРµСЃРјСЏС‚Р° РґР°С‚Р°С‚Р°, РЅР° РєРѕСЏС‚Рѕ СЃРµ РЅР°РІСЉСЂС€РІР°С‚ 1000 РґРЅРё 
+РѕС‚ С‚Р°Р·Рё СЂРѕР¶РґРµРЅР° РґР°С‚Р° Рё СЏ РѕС‚РїРµС‡Р°С‚РІР° РІ СЃСЉС‰РёСЏ С„РѕСЂРјР°С‚.*/
+
 public class Exercise_01 {
-	public static void main(String[] args) {
-		Scanner console = new Scanner(System.in);
-		System.out.println("Въведете страна на квадрат - ");
-		double n = Double.parseDouble(console.nextLine());
-		double area = n * n;
-		System.out.printf("Лицето на квадратът е %.2f", area);
+	public static void main(String[] args) throws ParseException {
+		Scanner input = new Scanner(System.in);
+		// create a calendar
+		Calendar cal = Calendar.getInstance();
+		String pattern = "dd-MM-yyyy";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+		System.out.println("Р’СЉРІРµРґРµС‚Рµ РґР°С‚Р° РІСЉРІ С„РѕСЂРјР°С‚ dd-MM-yyyy");
+		String date = input.nextLine();
+		String[] dateArr = date.split("-");
+
+		// set the year,month and day to something else
+		cal.set(Integer.parseInt(dateArr[2]), Integer.parseInt(dateArr[1]) - 1, Integer.parseInt(dateArr[0]));
+
+		cal.add(Calendar.DATE, 999);
+		// print the result
+		System.out.println("Р”Р°С‚Р°С‚Р° СЃР»РµРґ 1000 РґРЅРё С‰Рµ Р±СЉРґРµ");
+		System.out.printf(simpleDateFormat.format(cal.getTime()));
 	}
 }
